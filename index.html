@@ -103,7 +103,7 @@
                document.getElementById('question').textContent = `${currentProblemIndex + 1}. What is ${problem.num1} x ${problem.num2}?`;
                document.getElementById('question').style.fontSize = '75px';
                currentProblemIndex++;
-               setTimeout(showQuestion, 2000);
+               setTimeout(showQuestion, 3000);
            } else {
                showSwapMessage();
            }
@@ -113,7 +113,7 @@
        function showSwapMessage() {
            document.getElementById('question').textContent = 'Swap books!';
            document.getElementById('question').style.fontSize = '75px';
-           setTimeout(showResults, 3000);
+           setTimeout(showResults, 30000);
        }
 
 
