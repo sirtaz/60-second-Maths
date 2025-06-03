@@ -81,8 +81,8 @@
 
 
        function generateMultiplicationProblem() {
-           const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9,];
-           const numbers2 = [1,];
+           const numbers = [3, 4, 6, 7, 8, 9,];
+           const numbers2 = [0,1,2,3,4,5,6,7,8,9];
            const num1 = getRandomIntFromArray(numbers);
            const num2 = getRandomIntFromArray(numbers2);
            return {num1, num2, answer: num1 * num2};
@@ -91,7 +91,7 @@
 
        function generateProblems() {
            problems = [];
-           for (let i = 0; i < 60; i++) {
+           for (let i = 0; i < 20; i++) {
                problems.push(generateMultiplicationProblem());
            }
        }
@@ -103,7 +103,7 @@
                document.getElementById('question').textContent = `${currentProblemIndex + 1}. What is ${problem.num1} x ${problem.num2}?`;
                document.getElementById('question').style.fontSize = '75px';
                currentProblemIndex++;
-               setTimeout(showQuestion, 1000);
+               setTimeout(showQuestion, 3000);
            } else {
                showSwapMessage();
            }
@@ -111,9 +111,9 @@
 
 
        function showSwapMessage() {
-           document.getElementById('question').textContent = 'Dont cheat Angi!!! Swap books!';
+           document.getElementById('question').textContent = 'Swap books!';
            document.getElementById('question').style.fontSize = '75px';
-           setTimeout(showResults, 3000);
+           setTimeout(showResults, 30000);
        }
 
 
