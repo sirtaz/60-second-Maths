@@ -5,18 +5,25 @@ function getRandomIntFromArray(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function generateMultiplicationProblem() {
-    const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const numbers2 = [2, 5, 10];
-    const num1 = getRandomIntFromArray(numbers);
-    const num2 = getRandomIntFromArray(numbers);
+// function generateMultiplicationProblem() {
+//     const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+//     const numbers2 = [2, 5, 10];
+//     const num1 = getRandomIntFromArray(numbers);
+//     const num2 = getRandomIntFromArray(numbers);
+//     return {num1, num2, answer: num1 * num2};
+// }
+
+function generateMultiplicationProblem(num1, num2) {
     return {num1, num2, answer: num1 * num2};
 }
 
 function generateProblems() {
     problems = [];
-    for (let i = 0; i < 10; i++) {
-        problems.push(generateMultiplicationProblem());
+    const timesTables = [3, 4];
+    for (let table of timesTables) {
+        for (let i = 1; i <= 10; i++) { // Exclude multiplication by 0
+            problems.push(generateMultiplicationProblem(table, i));
+        }
     }
 }
 
